@@ -1,13 +1,15 @@
-let pallete = ["#1B1B1B", "#EB0000", "#FCFEFC"];
+let palette = ["#DCFEB0", "#391247", "#64D77D"];
+let randomBG;
 
 function setup() {
-	createCanvas(800, 800);
+	createCanvas(700, 1000);
 	noLoop();
 	rectMode(CENTER);
+  randomBG = random(palette);
 }
 
 function draw() {
-	background(255);
+	background(randomBG);
 	tile();
 }
 
@@ -17,8 +19,8 @@ function tile() {
 
 	for (let i = 0; i < c; i++) {
 		for (let j = 0; j < c; j++) {
-			let col1 = random(pallete);
-			let col2 = random(pallete);
+			let col1 = random(palette);
+			let col2 = random(palette);
 			let angle = int(random(4)) * HALF_PI;
 			let hs = w / 2;
 
