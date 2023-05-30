@@ -5,80 +5,72 @@ let randomBG;
 let bg;
 let category;
 
-
-
-function setup() {;
+function setup() {
   cnv = createCanvas(700, 1000);
   let x = (windowWidth - width) / 2;
   let y = (windowHeight - height) / 2;
   cnv.position(x, y);
-	noLoop();
-	rectMode(CENTER);
-  
-
+  noLoop();
+  rectMode(CENTER);
 }
 
 function draw() {
   category = floor(random(3));
 
-  if (category == 0){
+  if (category == 0) {
     bg = random(palette0);
- }
+  }
 
- if (category == 1){
+  if (category == 1) {
     bg = random(palette1);
- }
+  }
 
- if (category == 2){
+  if (category == 2) {
     bg = random(palette2);
- }
+  }
   background(bg);
-	tile();
-
+  tile();
 }
 
 function tile() {
-	let c = 6;
-	let w = width / c;
+  let c = 6;
+  let w = width / c;
   let col1;
   let col2;
 
-
-	for (let i = 0; i < c; i++) {
-		for (let j = 0; j < c; j++) {
-			
-      if (category == 0){
-         col1 = random(palette0);
-         col2 = random(palette0);
+  for (let i = 0; i < c; i++) {
+    for (let j = 0; j < c; j++) {
+      if (category == 0) {
+        col1 = random(palette0);
+        col2 = random(palette0);
       }
 
-      if (category == 1){
-         col1 = random(palette1);
-         col2 = random(palette1);
+      if (category == 1) {
+        col1 = random(palette1);
+        col2 = random(palette1);
       }
 
-      if (category == 2){
-         col1 = random(palette2);
-         col2 = random(palette2);
+      if (category == 2) {
+        col1 = random(palette2);
+        col2 = random(palette2);
       }
 
+      let angle = int(random(4)) * HALF_PI;
+      let hs = w / 2;
 
-			let angle = int(random(4)) * HALF_PI;
-			let hs = w / 2;
-
-			push();
-			translate(i * w + w / 2, j * w + w / 2);
-			rotate(angle);
-			noStroke();
-			fill(col1);
-			rect(0, 0, w, w);
-			fill(col2);
-			arc(-hs, -hs, w * 2, w * 2, 0, HALF_PI);
-			pop();
-		}
-	}
+      push();
+      translate(i * w + w / 2, j * w + w / 2);
+      rotate(angle);
+      noStroke();
+      fill(col1);
+      rect(0, 0, w, w);
+      fill(col2);
+      arc(-hs, -hs, w * 2, w * 2, 0, HALF_PI);
+      pop();
+    }
+  }
 }
 
 function keyPressed() {
-	redraw();
+  redraw();
 }
