@@ -76,40 +76,45 @@ function bordi() {
   let c = 6;
   let w = width / c;
   let col;
+  let a = 2;
 
-  for (let i = 0; i < 2; i++) {
-    for (let j = 0; j < 2; i++) {
+  for (let k = 0; k < 2; k++) {
+    for (let l = 0; l < 2; l++) {
       if (category == 0) {
-        //do {
-        col = random(palette0);
-        //  } while (col === bg);
+        do {
+          col = random(palette0);
+        } while (col === bg);
       }
 
       if (category == 1) {
-        // do {
-        col = random(palette1);
-        // } while (col === bg);
+        do {
+          col = random(palette1);
+        } while (col === bg);
       }
 
       if (category == 2) {
-        // do {
-        col = random(palette2);
-        // } while (col === bg);
+        do {
+          col = random(palette2);
+        } while (col === bg);
       }
-
-      let angle = i * HALF_PI;
-      let hs = w / 2;
+      if (l === 1 && k === 1) {
+        a = 4;
+      }
+      let angle = a * HALF_PI;
+      let med = w / 2;
+      a--;
 
       push();
-      translate(i * w + w / 2, j * w + w / 2);
+      translate(k * (width - w) + w / 2, l * (width - w) + w / 2);
       rotate(angle);
       noStroke();
       fill(bg);
       rect(0, 0, w, w);
       fill(col);
-      arc(-hs, -hs, w * 2, w * 2, 0, HALF_PI);
+      arc(-med, -med, w * 2, w * 2, 0, HALF_PI);
       pop();
     }
+    a = 3;
   }
 }
 
