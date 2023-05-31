@@ -6,7 +6,7 @@ let bg;
 let category;
 
 function setup() {
-  cnv = createCanvas(700, 1000);
+  cnv = createCanvas(600, 1000);
   let x = (windowWidth - width) / 2;
   let y = (windowHeight - height) / 2;
   cnv.position(x, y);
@@ -29,7 +29,7 @@ function draw() {
     bg = random(palette2);
   }
   background(bg);
-  // tile();
+  tile();
   bordi();
 }
 
@@ -40,7 +40,7 @@ function tile() {
   let col2;
 
   for (let i = 0; i < c; i++) {
-    for (let j = 0; j < c + 2; j++) {
+    for (let j = 0; j < c; j++) {
       if (category == 0) {
         col1 = random(palette0);
         col2 = random(palette0);
