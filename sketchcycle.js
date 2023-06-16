@@ -44,13 +44,13 @@ function draw() {
 }
 
 function tile() {
-  let c = 7;
-  let w = 700 / c;
+  let c = 6;
+  let w = 600 / c;
   let col1;
   let col2;
 
   for (let i = 0; i < c; i++) {
-    for (let j = 0; j < 10; j++) {
+    for (let j = 0; j < c; j++) {
       if (category == 0) {
         col1 = random(palette0);
         col2 = random(palette0);
@@ -70,7 +70,7 @@ function tile() {
       let hs = w / 2;
 
       push();
-      translate(i * w + w / 2, j * w + w / 2);
+      translate(i * w + w / 2 + 50, j * w + w / 2 + 50);
       rotate(angle);
       noStroke();
       fill(col1);
@@ -115,7 +115,7 @@ function bordi() {
       a--;
 
       push();
-      translate(k * (700 - w) + w / 2, l * (1000 - w) + w / 2);
+      translate(k * (600 - w) + w / 2 + 50, l * (600 - w) + w / 2 + 50);
       rotate(angle);
       noStroke();
       fill(bg);
@@ -129,24 +129,6 @@ function bordi() {
 }
 
 function drawtext() {
-  fill("#ffffff");
-  noStroke();
-
-  if (category == 2) {
-    rect(0, 0, 1200, 400);
-  } else {
-    rect(0, 0, 1000, 400);
-  }
-  //1st
-  rect(400, 350, 200, 100);
-  rect(300, 450, 200, 100);
-  //2nd
-  rect(400, 650, 200, 100);
-  rect(500, 750, 200, 100);
-  //3rd
-  rect(100, 750, 200, 100);
-  rect(200, 850, 200, 100);
-
   let colt;
   if (category == 0) {
     do {
@@ -166,12 +148,13 @@ function drawtext() {
     } while (colt === bg);
   }
   fill(colt);
+  textAlign(RIGHT);
   textSize(60);
   textFont(font);
-  text(conferences.titles[category].title, 40, 115);
+  text(conferences.titles[category].title, 650, 790);
   textSize(30);
-  text("CONFERENCES", 40, 50);
-  text(conferences.titles[category].dates, 40, 155);
+  text("CONFERENCES", 650, 725);
+  text(conferences.titles[category].dates, 650, 830);
 
   textAlign(LEFT);
   for (let i = 0; i < 3; i++) {
