@@ -7,17 +7,22 @@ function preload() {
   img2 = loadImage("assets/poster2.png");
   img3 = loadImage("assets/poster3.png");
 
+  logo = loadImage("assets/logo.png");
+
   font = loadFont("assets/font/SuisseIntl-Regular.ttf");
 }
 
 function setup() {
+  rectMode(CENTER);
   createCanvas(windowWidth, windowHeight);
-  background("#212121");
+  background("#ffffff");
   textFont(font);
   textAlign(CENTER, TOP);
   textSize(32);
   fill("#ffffff");
   text("Choose your poster", width / 2, 20);
+
+  image(logo, windowWidth / 2, 50);
 
   let img1X = width / 2 - imgWidth - 20;
   let img2X = width / 2;
