@@ -301,3 +301,7 @@ function bordipic() {
 function keyPressed() {
   redraw();
 }
+
+function mousePressed() {
+  saveCanvas(cnv, 'myCanvas', 'jpg');
+}

@@ -182,3 +182,8 @@ function drawtext() {
 function keyPressed() {
   redraw();
 }
+
+function mousePressed() {
+  saveCanvas(cnv, 'myCanvas', 'jpg');
+}
+

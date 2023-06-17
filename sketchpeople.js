@@ -195,3 +195,7 @@ function drawImage() {
 function keyPressed() {
   redraw();
 }
+function mousePressed() {
+  saveCanvas(cnv, 'myCanvas', 'jpg');
+
+}
