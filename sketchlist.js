@@ -40,6 +40,7 @@ function draw() {
   background(bg);
   tile();
   bordi();
+  bordipic();
   drawtext();
 }
 
@@ -83,8 +84,8 @@ function tile() {
 }
 
 function bordi() {
-  let c = 6;
-  let w = 600 / c;
+  let c = 7;
+  let w = 700 / c;
   let col;
   let a = 2;
 
@@ -129,7 +130,7 @@ function bordi() {
 }
 
 function drawtext() {
-  fill("#ffffff");
+  fill(bg);
   noStroke();
 
   if (category == 2) {
@@ -141,7 +142,7 @@ function drawtext() {
   rect(400, 350, 200, 100);
   rect(300, 450, 200, 100);
   //2nd
-  rect(400, 650, 200, 100);
+  rect(600, 650, 200, 100);
   rect(500, 750, 200, 100);
   //3rd
   rect(100, 750, 200, 100);
@@ -174,26 +175,127 @@ function drawtext() {
   text(conferences.titles[category].dates, 40, 155);
 
   textAlign(LEFT);
-  for (let i = 0; i < 3; i++) {
-    if (category == 0) {
-      textSize(17);
-      text(conferences.categories[category].kids[i].title, 50 + 225 * i, 920);
-      textSize(15);
-      text(conferences.categories[category].kids[i].name, 50 + 225 * i, 945);
-    }
-    if (category == 1) {
-      textSize(17);
-      text(conferences.categories[category].ai[i].title, 50 + 225 * i, 920);
-      textSize(15);
-      text(conferences.categories[category].ai[i].name, 50 + 225 * i, 945);
-    }
-    if (category == 2) {
-      textSize(17);
-      text(conferences.categories[category].eco[i].title, 50 + 225 * i, 920);
-      textSize(15);
-      text(conferences.categories[category].eco[i].name, 50 + 225 * i, 945);
-    }
+  if (category == 0) {
+    textSize(15);
+    text(conferences.categories[category].kids[0].title, 320, 345);
+    text(conferences.categories[category].kids[1].title, 520, 645);
+    text(conferences.categories[category].kids[2].title, 20, 745);
+    text(conferences.categories[category].kids[0].name, 320, 365);
+    text(conferences.categories[category].kids[1].name, 520, 665);
+    text(conferences.categories[category].kids[2].name, 20, 765);
+    textSize(12);
+    text(conferences.categories[category].kids[0].place, 220, 435);
+    text(conferences.categories[category].kids[1].place, 420, 735);
+    text(conferences.categories[category].kids[2].place, 120, 835);
+    text(conferences.categories[category].kids[0].date, 220, 455);
+    text(conferences.categories[category].kids[1].date, 420, 755);
+    text(conferences.categories[category].kids[2].date, 120, 855);
+    text(conferences.categories[category].kids[0].hour, 220, 475);
+    text(conferences.categories[category].kids[1].hour, 420, 775);
+    text(conferences.categories[category].kids[2].hour, 120, 875);
   }
+  if (category == 1) {
+    textSize(15);
+    text(conferences.categories[category].ai[0].title, 320, 345);
+    text(conferences.categories[category].ai[1].title, 520, 645);
+    text(conferences.categories[category].ai[2].title, 20, 745);
+    text(conferences.categories[category].ai[0].name, 320, 365);
+    text(conferences.categories[category].ai[1].name, 520, 665);
+    text(conferences.categories[category].ai[2].name, 20, 765);
+    textSize(12);
+    text(conferences.categories[category].ai[0].place, 220, 435);
+    text(conferences.categories[category].ai[1].place, 420, 735);
+    text(conferences.categories[category].ai[2].place, 120, 835);
+    text(conferences.categories[category].ai[0].date, 220, 455);
+    text(conferences.categories[category].ai[1].date, 420, 755);
+    text(conferences.categories[category].ai[2].date, 120, 855);
+    text(conferences.categories[category].ai[0].hour, 220, 475);
+    text(conferences.categories[category].ai[1].hour, 420, 775);
+    text(conferences.categories[category].ai[2].hour, 120, 875);
+  }
+  if (category == 2) {
+    textSize(15);
+    text(conferences.categories[category].eco[0].title, 320, 345);
+    text(conferences.categories[category].eco[1].title, 520, 645);
+    text(conferences.categories[category].eco[2].title, 20, 745);
+    text(conferences.categories[category].eco[0].name, 320, 365);
+    text(conferences.categories[category].eco[1].name, 520, 665);
+    text(conferences.categories[category].eco[2].name, 20, 765);
+    textSize(12);
+    text(conferences.categories[category].eco[0].place, 220, 435);
+    text(conferences.categories[category].eco[1].place, 420, 735);
+    text(conferences.categories[category].eco[2].place, 120, 835);
+    text(conferences.categories[category].eco[0].date, 220, 455);
+    text(conferences.categories[category].eco[1].date, 420, 755);
+    text(conferences.categories[category].eco[2].date, 120, 855);
+    text(conferences.categories[category].eco[0].hour, 220, 475);
+    text(conferences.categories[category].eco[1].hour, 420, 775);
+    text(conferences.categories[category].eco[2].hour, 120, 875);
+  }
+}
+function bordipic() {
+  let cold;
+
+  if (category == 0) {
+    do {
+      cold = random(palette0);
+    } while (cold === bg);
+  }
+  if (category == 1) {
+    do {
+      cold = random(palette1);
+    } while (cold === bg);
+  }
+  if (category == 2) {
+    do {
+      cold = random(palette2);
+    } while (cold === bg);
+  }
+
+  let angle = 1 * HALF_PI;
+
+  //rotate(angle);
+  noStroke();
+  //1
+  fill(bg);
+  rect(550, 350, 100, 100);
+  fill(cold);
+  arc(600, 400, 200, 200, 2 * HALF_PI, 3 * HALF_PI);
+  //2
+  fill(bg);
+  rect(250, 350, 100, 100);
+  fill(cold);
+  arc(200, 400, 200, 200, 3 * HALF_PI, 4 * HALF_PI);
+  //3
+  fill(cold);
+  rect(450, 450, 100, 100);
+  fill(bg);
+  arc(400, 400, 200, 200, 0, HALF_PI);
+  //4
+  fill(bg);
+  rect(450, 650, 100, 100);
+  fill(cold);
+  arc(400, 600, 200, 200, 0, HALF_PI);
+  //5
+  fill(cold);
+  rect(650, 750, 100, 100);
+  fill(bg);
+  arc(600, 700, 200, 200, 0, HALF_PI);
+  //6
+  fill(bg);
+  rect(250, 750, 100, 100);
+  fill(cold);
+  arc(300, 700, 200, 200, HALF_PI, 2 * HALF_PI);
+  //7
+  fill(bg);
+  rect(50, 850, 100, 100);
+  fill(cold);
+  arc(0, 900, 200, 200, 3 * HALF_PI, 4 * HALF_PI);
+  //8
+  fill(cold);
+  rect(350, 850, 100, 100);
+  fill(bg);
+  arc(300, 800, 200, 200, 0, HALF_PI);
 }
 
 function keyPressed() {
