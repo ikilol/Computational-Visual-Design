@@ -3,9 +3,9 @@ let imgWidth = 350;
 let imgHeight = 500;
 
 function preload() {
-  img1 = loadImage("assets/poster1.png");
-  img2 = loadImage("assets/poster2.png");
-  img3 = loadImage("assets/poster3.png");
+  img1 = loadImage("assets/poster1.jpg");
+  img2 = loadImage("assets/poster2.jpg");
+  img3 = loadImage("assets/poster3.jpg");
 
   logo = loadImage("assets/logo.png");
 
@@ -19,14 +19,23 @@ function setup() {
   textFont(font);
   textAlign(CENTER, TOP);
   textSize(32);
-  fill("#ffffff");
-  text("Choose your poster", width / 2, 20);
+  fill("black");
+  text(
+    "Choose a poster, than press any key to see variations.",
+    width / 2,
+    windowHeight - 200
+  );
+  text(
+    "Click on the poster to save it on your computer!",
+    width / 2,
+    windowHeight - 150
+  );
 
-  image(logo, windowWidth / 2, 50);
+  image(logo, windowWidth / 2 - 253, 50);
 
-  let img1X = width / 2 - imgWidth - 20;
-  let img2X = width / 2;
-  let img3X = width / 2 + imgWidth + 20;
+  let img2X = windowWidth / 2 - imgWidth / 2;
+  let img1X = windowWidth / 2 - imgWidth * 2;
+  let img3X = windowWidth / 2 + imgWidth;
   let imgY = height / 2 - imgHeight / 2;
 
   image(img1, img1X, imgY, imgWidth, imgHeight);
@@ -35,9 +44,9 @@ function setup() {
 }
 
 function mouseClicked() {
-  let img1X = width / 2 - imgWidth - 20;
-  let img2X = width / 2;
-  let img3X = width / 2 + imgWidth + 20;
+  let img2X = windowWidth / 2 - imgWidth / 2;
+  let img1X = windowWidth / 2 - imgWidth * 2;
+  let img3X = windowWidth / 2 + imgWidth;
   let imgY = height / 2 - imgHeight / 2;
 
   if (
