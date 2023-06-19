@@ -4,3 +4,4 @@ document.getElementById("downloadLink").addEventListener("click", function () {
   link.download = "TileTalks.pdf";
   link.click();
 });
+//<script src="script.js"></script>
