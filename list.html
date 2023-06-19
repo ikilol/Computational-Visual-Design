@@ -4,18 +4,60 @@
     <meta charset="utf-8" />
     <link rel="icon" href="assets/icon.png" />
     <title>TILE Talks</title>
+
     <link rel="stylesheet" type="text/css" href="style.css" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-  </head>
+    
+    <style>
 
-  <script type="text/javascript">
-    function zoom() {
-        document.body.style.zoom = "90%" 
+      body {
+        height: 100vh;
+      }
+      .text{
+        font-family: 'Raleway', sans-serif;
+        max-width: 40vw;
+        font-size: 25px;
+        margin-left: 12vw;
+      }
+
+      .text2{
+        font-family: 'Raleway', sans-serif;
+        max-width: 30vw;
+        font-size: 20px;
+        margin-left: 12vw;
+        margin-top: 60vh;
+        color: #7a7a7a;
+      }
+
+      .logo{
+      margin-left: 12vw;
+      margin-top: 3%;
+      width: 20%;
     }
-</script>
 
-  <body onload="zoom()" style="background-color: #212121">
-    <script src="sketchlist.js"></script>
+    a {
+      margin-top: 20%;
+  color: #A9E44C;
+}
+
+::selection {
+  color: black;
+  background: #A9E44C;
+}
+
+
+      </style>
+  </head>
+  
+  <body style="background-color: #ffffff">
+    <img class="logo" src="assets/LOGO4X.png" alt="Logo">
+    <div class="container">
+      <p class="text"> Press any key to start a new generation. 
+      </br>Click anywhere to download the result (.jpg) </br> </br> <a href="index.html">Back to home</a></p> 
+      
+      <p class="text2"> If you don't visualize this page properly, please zoom out your browser's viewport (cmd/ctrl and -) and refresh the page. This is because these posters are meant to be printed so have to be saved in a large format (1400x2000px) and many screens do not reach this amount of pixels.</p> 
+      <script class="script" src="sketchlist.js"></script>
+    </div>
+
   </body>
 </html>
