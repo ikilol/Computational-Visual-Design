@@ -196,5 +196,5 @@ function keyPressed() {
   redraw();
 }
 function mousePressed() {
-  saveCanvas(cnv, 'myCanvas', 'jpg');
+  saveCanvas(cnv, 'TileTalks - Single conference', 'jpg');
 }

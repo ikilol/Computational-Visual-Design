@@ -184,6 +184,6 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  saveCanvas(cnv, 'myCanvas', 'jpg');
+  saveCanvas(cnv, 'TileTalks - Cycle of conferences', 'jpg');
 }
 

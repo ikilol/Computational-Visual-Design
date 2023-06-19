@@ -303,5 +303,5 @@ function keyPressed() {
 }
 
 function mousePressed() {
-  saveCanvas(cnv, 'myCanvas', 'jpg');
+  saveCanvas(cnv, 'TileTalks - Conferences calendar', 'jpg');
 }
