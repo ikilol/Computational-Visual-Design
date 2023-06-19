@@ -197,5 +197,4 @@ function keyPressed() {
 }
 function mousePressed() {
   saveCanvas(cnv, 'myCanvas', 'jpg');
-
 }

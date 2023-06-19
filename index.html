@@ -1,17 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="assets/icon.png" />
+  <title>TILE Talks</title>
+  <style>
 
-    <link rel="icon" href="assets/icon.png" />
-    <title>TILE Talks</title>
+    body {
+      cursor: url('assets/cursor.png');
+    }
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    .imgs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 90vh;
+        padding: 0;
+        margin-left: 7vw;
+        
+        margin-right: 7vw;
+    }
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-  </head>
+    .logo{
+      margin-left: 7vw;
+      margin-top: 3%;
+      width: 20%;
+    }
 
-  <body style="background-color: #212121">
-    <script src="sketchhome.js"></script>
-  </body>
+    .image-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container {
+        margin: 1vw;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+
+     .text{
+        font-family: 'Raleway', sans-serif;
+        max-width: 71vw;
+        font-size: 40px;
+        margin-left: 7vw;
+      }
+
+      .text2{
+        font-family: 'Raleway', sans-serif;
+        max-width: 80vw;
+        font-size: 20px;
+        margin-left: 7vw;
+        float: left;
+      }
+
+            
+      .footer{
+        display: flex;
+        margin-top: 10%;
+        justify-content: space-between;
+      }
+
+      .credits{
+        min-width: 10%;
+        max-width: 25%;
+        height: auto;
+      float: right;
+      margin-right: 7vw;
+      }
+
+      .title1{
+        font-family: 'Raleway', sans-serif;
+        max-width: 70vw;
+        font-size: 40px;
+        margin-left: 7vw;
+        margin-top: 7vw;
+        text-decoration: underline;
+      }
+
+      .title2{
+        font-family: 'Raleway', sans-serif;
+        max-width: 70vw;
+        font-size: 30px;
+        color: black;
+      }
+
+      
+
+
+      a {
+  color: #A9E44C;
+}
+
+::selection {
+  color: black;
+  background: #A9E44C;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <img class="logo" src="assets/LOGO4X.png" alt="Logo">
+
+  <p class="text"> TileTalks is a project developed in Computational Visual Design course at Politecnico di Milano for <a href="https://dipartimentodesign.polimi.it/it/">Dipartimento di Design</a>.
+  Reminiscent of the shapes of the masters of the milanese style and deeply influenced by Neue Bauhaus' composition rules, it exploits p5.js' potential to create dinamic and generative identities for 3 cycles of conferences. <a href="assets/TileTalks.pdf">Full project →</a> </p>
+  
+  <p class="title1">
+    Click on a category to generate a unique poster
+  </p>
+  <div class="imgs">
+    <div class="image-row">
+        <div class="image-container">
+            <a href="cycle.html">
+                <img src="assets/MIX1.GIF" alt="Image 1">
+                <p class="title2"> Cycle of conferences </p>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="list.html">
+                <img src="assets/MIX2.GIF" alt="Image 2">
+                <p class="title2"> Conference calendar </p>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="people.html">
+                <img src="assets/MIX3.GIF" alt="Image 3">   
+                <p class="title2"> Single conference </p>
+            </a>
+        </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="text2"> Designed and developed by <a href="https://www.instagram.com/lucabottani/?hl=en">Luca Bottani</a> and <a href="https://www.instagram.com/ricccardoventura/?hl=en">Riccardo Ventura</a></p>
+    <img class="credits" src="assets/CREDITS.png" alt="CREDITS">
+</div>
+</body>
 </html>

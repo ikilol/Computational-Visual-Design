@@ -2,9 +2,15 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  background-color: #212121
 }
 
 canvas {
   display: block;
+}
+
+.ok {
+  width: 100vw;
+  height: 100vh;
+  border: none;
 }
